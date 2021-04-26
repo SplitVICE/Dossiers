@@ -15,9 +15,6 @@ public class SQLite {
     private Connection con;
     ResultSet rs;
 
-    //Connection example:
-    //public static SQLite sqlite = new SQLite(SQLiteDB.db");
-    //To get program path System.getProperty("user.dir")
     public SQLite(String data_source_path) {
         this.database_uri = data_source_path;
     }
@@ -25,39 +22,23 @@ public class SQLite {
     public SQLite() {
     }
 
-    /**
-     * Executes a SQLite querys such as INSERT, DELETE and Update.
-     *
-     * @param query Query statement. Such as SELECT * from TABLE;
-     * @param console_log Message that will be shown on console when the
-     * function ends.
-     */
     public void Query(String query, String console_log) {
         try {
             this.con = DriverManager.getConnection("jdbc:sqlite:" + database_uri);
             Statement stmt = this.con.createStatement();
             stmt.executeQuery(query);
         } catch (SQLException e) {
-            // e.printStackTrace();
         } finally {
             System.out.println(console_log);
             Close_connection();
         }
     }
 
-    /**
-     * Checks if database exists using Java.io File.
-     *
-     * @param db_path Path to database.
-     * @return Returns true if .db file is found.
-     */
     public Boolean check_if_db_exists(String db_path) {
         java.io.File file = new java.io.File(db_path);
         if (file.exists()) {
-            //System.out.println("Database exists.");
             return true;
         } else {
-            //System.out.println("*** Database does not exists! ***");
             return false;
         }
     }
@@ -76,12 +57,10 @@ public class SQLite {
             e.printStackTrace();
             return false;
         } finally {
-            // System.out.println("Query finished");
             Close_connection();
         }
     }
 
-    //Method to create a new database
     public void createNewDatabase() {
         String url = "jdbc:sqlite:" + this.database_uri;
         try {
@@ -90,32 +69,25 @@ public class SQLite {
                 DatabaseMetaData meta = this.con.getMetaData();
             }
             Close_connection();
-            //System.out.println("*** Database has been created ***");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
             Close_connection();
         }
     }
 
-    //Create table to databases
     public void createNewTable(String table_specs) {
         String sqlQuery = table_specs;
         try {
             this.con = DriverManager.getConnection("jdbc:sqlite:" + database_uri);
             Statement stmt = this.con.createStatement();
-            // create a new table
             stmt.execute(table_specs);
             Close_connection();
-            System.out.println("*** Database table has been created ***");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
             Close_connection();
         }
     }
 
-    /**
-     * Closes connection of Database.
-     */
     private void Close_connection() {
         try {
             this.con.close();

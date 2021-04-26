@@ -8,7 +8,7 @@ import java.util.LinkedList;
 
 public class Create_Proceedings extends javax.swing.JFrame {
 
-    private Controller_Proceeding controller_Proceeding = new Controller_Proceeding(Memory.database_uri);
+    private final Controller_Proceeding controller_Proceeding = new Controller_Proceeding(Memory.database_uri);
     private int id = -1;
     private Model_Proceeding editable_model_proceeding = null;
 
@@ -20,7 +20,9 @@ public class Create_Proceedings extends javax.swing.JFrame {
      */
     public Create_Proceedings(int id) {
         this.id = id;
+        setIconImage(Memory.getIconImage());
         initComponents();
+        this.setTitle(Memory.application_name +" by JUST VICE - " + Memory.application_version);
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         on_load_settings();
@@ -61,7 +63,7 @@ public class Create_Proceedings extends javax.swing.JFrame {
             jTextField_name.setText(this.editable_model_proceeding.getName());
             jTextField_category.setText(this.editable_model_proceeding.getCategory());
             jTextArea_body.setText(this.editable_model_proceeding.getBody());
-            jLabel_title.setText("Editing proceeding");
+            jLabel_title.setText("Editing dossier");
             jLabel_uuid.setText(this.editable_model_proceeding.getUuid());
         }
     }
@@ -88,7 +90,7 @@ public class Create_Proceedings extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel_title.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel_title.setText("Create proceeding");
+        jLabel_title.setText("Create dossier");
 
         jLabel2.setText("Name");
 
@@ -106,7 +108,7 @@ public class Create_Proceedings extends javax.swing.JFrame {
         jTextArea_body.setRows(5);
         jScrollPane1.setViewportView(jTextArea_body);
 
-        jButton_cancel.setText("Cancel");
+        jButton_cancel.setText("Back");
         jButton_cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_cancelActionPerformed(evt);
@@ -234,7 +236,7 @@ public class Create_Proceedings extends javax.swing.JFrame {
         Model_Proceeding model_Proceeding = new Model_Proceeding(name, category, body, jLabel_uuid.getText());
         controller_Proceeding.save_proceeding(model_Proceeding);
         controller_Proceeding.load_proceedings_set_on_memory();
-        Run.joptionPaneMessage("Proceeding " + name + " saved", "Proceeding saved", "Message");
+        Run.joptionPaneMessage("Dossier " + name + " saved", "Dossier saved", "Message");
         clean_fields();
         set_categories_jcombobox();
         set_uuid();
@@ -247,7 +249,7 @@ public class Create_Proceedings extends javax.swing.JFrame {
         this.editable_model_proceeding.setBody(body);
         controller_Proceeding.update_proceeding(this.editable_model_proceeding);
         controller_Proceeding.load_proceedings_set_on_memory();
-        Run.joptionPaneMessage("Proceeding " + name + " updated", "Proceeding updated", "Message");
+        Run.joptionPaneMessage("Dossier " + name + " updated", "Dossier updated", "Message");
         View_Proceedings view_Proceedings = new View_Proceedings();
         this.dispose();
     }

@@ -6,12 +6,13 @@ import Models.Model_Proceeding;
 import java.util.LinkedList;
 import javax.swing.DefaultListModel;
 import Controllers.Controller_Proceeding;
-import Frames.Create_Proceedings;
 
 public class View_Proceedings extends javax.swing.JFrame {
 
     public View_Proceedings() {
+        setIconImage(Memory.getIconImage());
         initComponents();
+        this.setTitle(Memory.application_name +" by JUST VICE - " + Memory.application_version);
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         on_load_settings();
@@ -134,7 +135,7 @@ public class View_Proceedings extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("View proceedings");
+        jLabel1.setText("View dossiers");
 
         jList.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

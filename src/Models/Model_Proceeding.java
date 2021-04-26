@@ -39,7 +39,7 @@ public class Model_Proceeding {
 
     @Override
     public String toString() {
-        return this.name + " - " + this.category + " - " + this.uuid;
+        return this.name + " - " + this.category;
     }
     
     public static LinkedList<String> get_categories_not_repeated(){
@@ -53,7 +53,7 @@ public class Model_Proceeding {
     }
     
     public String get_proceeding_view(){
-        return this.name + " - " + this.category + " - " + this.uuid + " - date: " + this.date + "\n\n" + this.body;
+        return this.name + "\n" + this.category + "\n" + this.uuid + "\nDate: " + this.date + "\n\n" + this.body;
     }
 
     public Model_Proceeding() {

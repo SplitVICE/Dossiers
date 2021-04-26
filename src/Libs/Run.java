@@ -2,15 +2,20 @@ package Libs;
 
 import Controllers.Controller_Proceeding;
 import Frames.Home;
-import Models.Model_Proceeding;
+import java.awt.Desktop;
+import java.awt.Frame;
 import java.util.UUID;
 import javax.swing.JOptionPane;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
-import java.util.LinkedList;
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Run {
 
@@ -56,14 +61,6 @@ public class Run {
         return UUID.randomUUID().toString();
     }
 
-    /**
-     * Shows JOptionPane panel.
-     *
-     * @param message Body message.
-     * @param title Title message.
-     * @param icon Type of icon to show. Options: "Error", "Message", "Alert",
-     * "QuestionMark"
-     */
     public static void joptionPaneMessage(String message, String title, String icon) {
         switch (icon) {
             case "Error":
@@ -95,21 +92,6 @@ public class Run {
         clipboard.setContents(selection, selection);
     }
 
-    /**
-     * Shows a JOptionPane that asks the user something.
-     *
-     * @param message Body message.
-     * @param title Title message.
-     * @param option Shows answer buttons. 0: Yes & No buttons. Yes returns 0.
-     * No returns 1. X returns -1. 1: Yes, No & Cancel buttons. Yes returns 0.
-     * No returns 1, Cancel returns 2. X returns -1. 2: Accept & Cancel buttons.
-     * Accept returns 0. Cancel returns 2. X returns -1.
-     * @param icon Shows an icon. "Error": shows error icon. "Message": shows
-     * informative icon. "Alert": shows exclamation icon. "QuestionMark": shows
-     * question mark icon.
-     * @return int - Returns the number of the specified button pressed. Read
-     * option @param description.
-     */
     public static int joptionPaneAsk(String message, String title, int option, String icon) {
         switch (icon) {
             case "Error":
@@ -124,4 +106,14 @@ public class Run {
                 return JOptionPane.showConfirmDialog(null, message, title, option, 1);
         }
     }
+    
+    public static void openLink(String link) {
+	if (Desktop.isDesktopSupported()) {
+		try {
+			Desktop.getDesktop().browse(new URI(link));
+		} catch (URISyntaxException | IOException ex) {
+			Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+		}
+	}
+}
 }

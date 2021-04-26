@@ -23,13 +23,6 @@ public class Controller_Proceeding {
         this.database_uri = database_uri;
     }
 
-    /**
-     * Executes a SQLite querys such as INSERT, DELETE and Update.
-     *
-     * @param query Query statement. Such as SELECT * from TABLE;
-     * @param console_log Message that will be shown on console when the
-     * function ends.
-     */
     private void Query(String query, String console_log) {
         try {
             this.con = DriverManager.getConnection("jdbc:sqlite:" + database_uri);
@@ -61,14 +54,9 @@ public class Controller_Proceeding {
     }
 
     public void update_proceeding(Model_Proceeding item) {
-        System.out.println("item name: " + item.getName());
-        System.out.println("item body: " + item.getBody());
-        System.out.println("item category: " + item.getCategory());
-        System.out.println("item id: " + item.getId());
         String query = "UPDATE proceeding\n"
                 + "SET name = '" + item.getName() + "', body = '" + item.getBody() + "', category = '" + item.getCategory() + "'\n"
                 + "WHERE id = " + item.getId() + ";";
-        System.out.println(query);
         Query(query, "");
         System.out.println("Proceeding edited");
     }
@@ -109,9 +97,6 @@ public class Controller_Proceeding {
         }
     }
 
-    /**
-     * Closes connection of Database.
-     */
     private void Close_connection() {
         try {
             this.con.close();
