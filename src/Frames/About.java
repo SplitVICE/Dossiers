@@ -144,11 +144,11 @@ public class About extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel_github_repositoryMouseClicked
 
     private void jLabel_dossiers_websiteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_dossiers_websiteMouseClicked
-        Run.openLink("https://just-vice.com/technology/java/dossiers/");
+        Run.openLink("http://just-vice.com/technology/java/dossiers/");
     }//GEN-LAST:event_jLabel_dossiers_websiteMouseClicked
 
     private void jLabel_twitterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_twitterMouseClicked
-        Run.openLink("https://just-vice.com/s/twitter");
+        Run.openLink("http://just-vice.com/s/twitter");
     }//GEN-LAST:event_jLabel_twitterMouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
