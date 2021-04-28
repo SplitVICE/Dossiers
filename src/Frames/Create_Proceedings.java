@@ -236,6 +236,7 @@ public class Create_Proceedings extends javax.swing.JFrame {
         Model_Proceeding model_Proceeding = new Model_Proceeding(name, category, body, jLabel_uuid.getText());
         controller_Proceeding.save_proceeding(model_Proceeding);
         controller_Proceeding.load_proceedings_set_on_memory();
+        Memory.model_proceeding.save_dossiers_files_on_txt_files();
         Run.joptionPaneMessage("Dossier " + name + " saved", "Dossier saved", "Message");
         clean_fields();
         set_categories_jcombobox();
@@ -249,6 +250,7 @@ public class Create_Proceedings extends javax.swing.JFrame {
         this.editable_model_proceeding.setBody(body);
         controller_Proceeding.update_proceeding(this.editable_model_proceeding);
         controller_Proceeding.load_proceedings_set_on_memory();
+        Memory.model_proceeding.save_dossiers_files_on_txt_files();
         Run.joptionPaneMessage("Dossier " + name + " updated", "Dossier updated", "Message");
         View_Proceedings view_Proceedings = new View_Proceedings();
         this.dispose();

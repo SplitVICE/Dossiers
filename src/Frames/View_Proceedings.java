@@ -392,6 +392,7 @@ public class View_Proceedings extends javax.swing.JFrame {
                 Controller_Proceeding controller_Proceedings = new Controller_Proceeding(Memory.database_uri);
                 controller_Proceedings.delete_proceeding(model_Proceeding.getId());
                 controller_Proceedings.load_proceedings_set_on_memory();
+                Memory.model_proceeding.save_dossiers_files_on_txt_files();
                 reset_frame();
             }
         }

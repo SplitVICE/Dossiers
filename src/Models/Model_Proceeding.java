@@ -2,9 +2,10 @@ package Models;
 
 import Libs.Memory;
 import Libs.Run;
+import Threads.Thread_Proceeding;
 import java.util.LinkedList;
 
-public class Model_Proceeding {
+public class Model_Proceeding{
     private int id;
     private String name;
     private String category;
@@ -50,6 +51,11 @@ public class Model_Proceeding {
             }    
         }
         return category_list;
+    }
+    
+    public void save_dossiers_files_on_txt_files(){
+        Thread_Proceeding thread_Proceeding = new Thread_Proceeding();
+        thread_Proceeding.save_dossiers_into_txt_files();
     }
     
     public String get_proceeding_view(){
