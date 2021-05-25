@@ -10,10 +10,10 @@ public class About extends javax.swing.JFrame {
     public About() {
         setIconImage(Memory.getIconImage());
         initComponents();
-        this.setTitle(Memory.application_name +" by JUST VICE - " + Memory.application_version);
+        this.setTitle(Memory.application_name +" by SPLIT VICE - " + Memory.application_version);
         this.setVisible(true);
         this.setLocationRelativeTo(null);
-        jLabel_copyright_vice_version.setText("© MIT - JUST VICE 2021 - " + Memory.application_version);
+        jLabel_copyright_vice_version.setText("© MIT - SPLIT VICE 2021 - " + Memory.application_version);
     }
 
     @SuppressWarnings("unchecked")
@@ -63,7 +63,7 @@ public class About extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel2.setText("Dossiers");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/justvice.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/splitvice.png"))); // NOI18N
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
@@ -77,7 +77,7 @@ public class About extends javax.swing.JFrame {
             }
         });
 
-        jLabel_copyright_vice_version.setText("© MIT - JUST VICE 2021 - 0.0.0");
+        jLabel_copyright_vice_version.setText("© MIT - SPLIT VICE 2021 - 0.0.0");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -94,13 +94,13 @@ public class About extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addGap(66, 66, 66)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel_github_repository)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel_github_repository, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel_dossiers_website)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(10, 10, 10)
-                                        .addComponent(jLabel_twitter)))))
+                                        .addComponent(jLabel_twitter))
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton_back)
@@ -115,7 +115,7 @@ public class About extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel_twitter)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -140,15 +140,15 @@ public class About extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton_backActionPerformed
 
     private void jLabel_github_repositoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_github_repositoryMouseClicked
-        Run.openLink("https://github.com/JUSTVICE/Dossiers");
+        Run.openLink("https://github.com/splitvice/Dossiers");
     }//GEN-LAST:event_jLabel_github_repositoryMouseClicked
 
     private void jLabel_dossiers_websiteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_dossiers_websiteMouseClicked
-        Run.openLink("https://just-vice.com/technology/java/dossiers/");
+        Run.openLink("http://split-vice.com/technology/java/dossiers/");
     }//GEN-LAST:event_jLabel_dossiers_websiteMouseClicked
 
     private void jLabel_twitterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_twitterMouseClicked
-        Run.openLink("https://just-vice.com/s/twitter");
+        Run.openLink("http://split-vice.com/s/twitter");
     }//GEN-LAST:event_jLabel_twitterMouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked

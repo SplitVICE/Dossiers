@@ -10,7 +10,7 @@ public class Memory {
     public static Model_Proceeding model_proceeding = new Model_Proceeding();
     public static String application_name = "Dossiers";
     public static String dossiers_files_folder_name = "Dossiers files";
-    public static String application_version = "1.1.0";
+    public static String application_version = "1.1.1";
 
     public static java.awt.Image getIconImage() {
         return java.awt.Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Images/logo.png"));

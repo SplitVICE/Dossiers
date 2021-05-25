@@ -12,7 +12,7 @@ public class View_Proceedings extends javax.swing.JFrame {
     public View_Proceedings() {
         setIconImage(Memory.getIconImage());
         initComponents();
-        this.setTitle(Memory.application_name +" by JUST VICE - " + Memory.application_version);
+        this.setTitle(Memory.application_name +" by SPLIT VICE - " + Memory.application_version);
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         on_load_settings();

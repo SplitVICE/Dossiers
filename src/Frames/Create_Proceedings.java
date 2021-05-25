@@ -22,7 +22,7 @@ public class Create_Proceedings extends javax.swing.JFrame {
         this.id = id;
         setIconImage(Memory.getIconImage());
         initComponents();
-        this.setTitle(Memory.application_name +" by JUST VICE - " + Memory.application_version);
+        this.setTitle(Memory.application_name +" by SPLIT VICE - " + Memory.application_version);
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         on_load_settings();
